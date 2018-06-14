@@ -80,7 +80,7 @@ module FFMPEG
 
               if @movie
                 progress = time / @movie.duration
-                yield(progress) if block_given?
+                yield(progress, wait_thr.pid) if block_given?
               end
             end
           end
